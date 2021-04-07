@@ -27,7 +27,7 @@ class Person(models.Model):
         return self.user.last_name + ", " + self.user.first_name
 
 
-class Teacher(Person):
+class Teacher(models.Model):
     def __str__(self):
         return "Teacher: " + super().__str__()
 
@@ -43,7 +43,7 @@ class Section(models.Model):
         return self.course.title + ": Section " + str(self.section_id)
 
 
-class Student(Person):
+class Student(models.Model):
     student_id = models.IntegerField(primary_key=True)
 
     def __str__(self):
